@@ -1,26 +1,57 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import * as React from "react";
+import { emit } from "concent";
+import "reactbulma";
+import "bulma/css/bulma.css";
+import "./App.css";
+import { HashRouter, Switch, Route } from "react-router-dom";
+import { ConnectRouter } from "react-router-concent";
+import Button from "./components/dumb/Button";
+import NotFound from "./components/dumb/NotFound";
+import Menu from "./components/biz-smart/Menu";
+import Header from "./components/biz-smart/Header";
+import SetupDemo from "./pages/SetupDemo";
+import * as bizCst from "./base/constant/biz";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
+const { PAGE_SETUP_DEMO } = bizCst;
+
+class Layout extends React.Component {
+  state = {
+    visible: false
+  };
+  openMenu = () => {
+    emit("openMenu");
+  };
+  openRecordLogDrawer = () => {
+    this.setState({ visible: true });
+  };
+  render() {
+    return (
+      <div>
+        <Button
+          bulmaIs={["small", "info"]}
+          onClick={this.openMenu}
+          className="cc_openMenuBtn"
         >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+          open menu
+        </Button>
+        <Header />
+        <div className="box">
+          <Switch>
+            <Route exact path="/" component={SetupDemo} />
+            <Route path={PAGE_SETUP_DEMO} component={SetupDemo} />
+            <Route component={NotFound} />
+          </Switch>
+        </div>
+        <Menu />
+      </div>
+    );
+  }
 }
 
-export default App;
+export default () => (
+  <HashRouter>
+    <ConnectRouter>
+      <Route path="/" component={Layout} />
+    </ConnectRouter>
+  </HashRouter>
+);
