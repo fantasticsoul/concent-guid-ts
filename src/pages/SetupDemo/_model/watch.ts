@@ -1,5 +1,5 @@
 import { defWatch, IFnCtx, ICtxBase } from "concent";
-import { SetupDemoState, SetupDemoCu } from "../../../types/store";
+import { SetupDemoState, SetupDemoCu } from "types/store";
 
 type FnCtx = IFnCtx<ICtxBase, SetupDemoState, SetupDemoCu>;
 

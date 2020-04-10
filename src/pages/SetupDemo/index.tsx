@@ -4,8 +4,8 @@ import { registerHookComp, NoMap, ICtxCommon, IRootBase } from "concent";
 import FnDemo from "./FnDemo";
 import ClassDemo from "./ClazzDemo";
 import { Tabs } from "reactbulma";
-import TabItem from "../../components/dumb/TabItem";
-import {SetupDemoState} from "../../types/store";
+import TabItem from "components/dumb/TabItem";
+import {SetupDemoState} from "types/store";
 
 const makeTabActiveStatus = () => ({ clazz: false, fn: false });
 type Status = keyof ReturnType<typeof makeTabActiveStatus>;

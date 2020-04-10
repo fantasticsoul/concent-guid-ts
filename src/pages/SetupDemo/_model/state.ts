@@ -1,4 +1,4 @@
-import { Book } from "../../../types/domain";
+import { Book } from "types/domain";
 
 interface Test{
   a:number,

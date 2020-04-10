@@ -2,10 +2,10 @@ import * as React from "react";
 import "./_model";
 import { useConcent, NoMap } from "concent";
 import View from "./View";
-import { RootState, CtxMS, SetupDemoM } from "../../types/store";
-import { SetupDemo } from "../../base/constant/moduleName";
-import * as e from "../../base/constant/event";
-import { EvMap } from "../../types/eventMap";
+import { RootState, CtxMS, SetupDemoM } from "types/store";
+import { SetupDemo } from "base/constant/moduleName";
+import * as e from "base/constant/event";
+import { EvMap } from "types/eventMap";
 
 export interface IDemoProps{
   renderBy: string;

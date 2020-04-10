@@ -1,5 +1,5 @@
-import { BookCu } from "../../../types/biz";
-import { SetupDemoState } from "../../../types/store";
+import { BookCu } from "types/biz";
+import { SetupDemoState } from "types/store";
 import { defComputed, defComputedVal } from 'concent';
 
 export function books({books}:SetupDemoState): BookCu[] {

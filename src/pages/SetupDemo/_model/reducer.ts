@@ -1,6 +1,6 @@
-import * as bookServ from "../../../services/book";
+import * as bookServ from "services/book";
 import { IActionCtx } from 'concent';
-import { RootState, RootComputed, SetupDemoM } from '../../../types/store';
+import { RootState, RootComputed, SetupDemoM } from 'types/store';
 
 type Ac = IActionCtx<RootState, RootComputed, SetupDemoM>;
 

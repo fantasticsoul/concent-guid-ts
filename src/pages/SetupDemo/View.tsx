@@ -1,7 +1,7 @@
 import * as React from "react";
-import BookItem from "../../components/biz-dumb/BookItem";
-import Button from "../../components/dumb/Button";
-import { BookCu } from "../../types/biz";
+import BookItem from "components/biz-dumb/BookItem";
+import Button from "components/dumb/Button";
+import { BookCu } from "types/biz";
 
 interface IProps {
   loading: boolean;
