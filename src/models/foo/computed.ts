@@ -1,5 +1,5 @@
 import { defComputed, defComputedVal, IFnCtxBase } from "concent";
-import { FooState } from "../../types/store";
+import { FooState } from "types/store";
 
 export const addrValidCount = defComputed<FooState, string, IFnCtxBase>(({ addrList }) => {
     console.log("--->", addrList);

@@ -1,20 +1,20 @@
 import * as React from "react";
 import Message from "../dumb/Message";
 import { register, ICtxCommon, IRootBase } from "concent";
-import * as bizCst from "../../base/constant/biz";
-import * as e from "../../base/constant/event";
-import { EvMap } from "../../types/eventMap";
+import * as bizCst from "base/constant/biz";
+import * as e from "base/constant/event";
+import { EvMap } from "types/eventMap";
 import Button from "../dumb/Button";
 
 const { PAGE_DEFAULT, PAGE_SETUP_DEMO } = bizCst;
 const btnIs = ["small", "info"];
 
 interface PathDesc {
-  [key:string]:{title:string, content:React.ReactNode}
+  [key: string]: { title: string, content: React.ReactNode }
 }
 
 const pathname_desc_: PathDesc = {
- [PAGE_SETUP_DEMO]: {
+  [PAGE_SETUP_DEMO]: {
     title: "now you are at setup-demo",
     content: (
       <>
@@ -39,13 +39,13 @@ const pathname_desc_: PathDesc = {
 
 const defaultPathname = window.location.pathname;
 
-const setup = (ctx: ICtxCommon<{}, {pathname:string}>) => {
+const setup = (ctx: ICtxCommon<{}, { pathname: string }>) => {
   ctx.on("onUrlChanged", params => {
     const pathname = params.pathname;
     ctx.setState({ pathname });
   });
 
-  const user = {id:'1', name:'ok', age:22, email:['xxx']};
+  const user = { id: '1', name: 'ok', age: 22, email: ['xxx'] };
 
   return {
     emitFoo: () => {
@@ -54,13 +54,13 @@ const setup = (ctx: ICtxCommon<{}, {pathname:string}>) => {
   };
 };
 
-type Ctx = ICtxCommon<{}, {pathname:string}, ReturnType<typeof setup>>;
+type Ctx = ICtxCommon<{}, { pathname: string }, ReturnType<typeof setup>>;
 
 
 export default register<{}, IRootBase>({ setup })(
   class extends React.Component {
     state = { pathname: defaultPathname };
-    ctx =  {} as Ctx;
+    ctx = {} as Ctx;
     getDesc = () => {
       const { pathname } = this.state;
       let desc = pathname_desc_[pathname];

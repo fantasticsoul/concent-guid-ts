@@ -14,4 +14,5 @@ export const val2 = defComputed(()=>{
   return 'gogogo';
 }, []);
 
+// define s static computed value, then change this in watch process
 export const invalidBookCount = defComputedVal(0);

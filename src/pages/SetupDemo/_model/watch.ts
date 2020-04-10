@@ -4,7 +4,8 @@ import { SetupDemoState, SetupDemoCu } from "types/store";
 type FnCtx = IFnCtx<ICtxBase, SetupDemoState, SetupDemoCu>;
 
 
-// better than export function books(){}
+// if you want to customize watch options, use defWatch
+// replace export function books(){}
 
 export const books = defWatch<SetupDemoState, FnCtx>(({ books }, _, fnCtx) => {
   console.log('books.length ', books.length);

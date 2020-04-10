@@ -1,5 +1,5 @@
 import * as React from "react";
-import { BookCu } from '../../types/biz'
+import { BookCu } from 'types/biz'
 
 export default (props: BookCu) => {
   const { name, author, summary, _publishTimeLabel } = props;
