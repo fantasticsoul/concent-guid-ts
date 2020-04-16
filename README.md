@@ -5,8 +5,8 @@
 - mkdir -p node_modules/@types/reactbulma
 > 在@types目录下创建一个reactbulma目录，（因reactbulma无类型描述文件，需要创建一个空的）
 - touch node_modules/@types/reactbulma/index.d.ts 
-> 在reactbulma目录下新建一个index.d.ts 文件，拷贝以下内容至index.d.ts文件并保存,
-> 当然这里也可以输入 echo "declare module 'reactbulma'" > node_modules/@types/reactbulma/index.d.ts 并回车
+- echo "declare module 'reactbulma'" > node_modules/@types/reactbulma/index.d.ts
+> 或者在reactbulma目录下新建一个index.d.ts 文件，拷贝以下内容至index.d.ts文件并保存,
 ```
 declare module 'reactbulma'
 ```
